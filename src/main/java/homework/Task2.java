@@ -6,7 +6,11 @@ public class Task2 {
          char b = 5;
 
          for (int i = 0; i < b; i++) {
-             System.out.println(a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a);
+             for (int j = 0; j < 10; j++) {
+                 System.out.print(a + " ");
+
+             }
+             System.out.println();
 
          }
 
