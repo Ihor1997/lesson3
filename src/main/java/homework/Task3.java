@@ -5,14 +5,20 @@ public class Task3 {
     public static void main(String[] args) {
 
         String a = "Ihor";
-        char b = 5;
-        char i = 0;
+        char b = 0;
+        while (b < 5) {
 
-        while (i < b) {
-            i++;
-            System.out.println(a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a + " " + a);
+        int j = 10;
+        while (j > 0) {
+
+            System.out.print(a + " ");
+            j--;
+        }
+            System.out.println();
+            b ++;
 
         }
+
 
 
     }
