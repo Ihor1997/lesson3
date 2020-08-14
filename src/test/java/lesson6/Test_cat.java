@@ -1,6 +1,6 @@
-package test.java.lesson6;
+package lesson6;
 
-import lesson4.Cat;
+import main.java.lesson4.Cat;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
