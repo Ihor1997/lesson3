@@ -16,7 +16,7 @@ public class Task1 {
         driver.get("https://rozetka.com.ua/");
         Thread.sleep(1000);
         String phonenumber = driver.findElement(By.cssSelector("button.header-phones__button")).getText();
-        String deleteWhiteSpace = phonenumber.replaceAll("[\\s+|\\()\\-]+", "");
+        String deleteWhiteSpace = phonenumber.replaceAll("[\\s+()-]", "");
         System.out.println("<<" + deleteWhiteSpace + ">>");
         driver.quit();
 
