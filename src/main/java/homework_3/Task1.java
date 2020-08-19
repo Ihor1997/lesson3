@@ -13,10 +13,10 @@ public class Task1 {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         ChromeDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://itea.ua/");
+        driver.get("https://rozetka.com.ua/");
         Thread.sleep(1000);
-        String phonenumber = driver.findElement(By.cssSelector("a[class = 'phone_header phones-block__phone']")).getText();
-        String deleteWhiteSpace = phonenumber.replaceAll("\\s+", "");
+        String phonenumber = driver.findElement(By.cssSelector("button.header-phones__button")).getText();
+        String deleteWhiteSpace = phonenumber.replaceAll("[\\s+|\\()\\-]+", "");
         System.out.println("<<" + deleteWhiteSpace + ">>");
         driver.quit();
 
