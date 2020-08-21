@@ -14,13 +14,13 @@ public class Task_2_unit {
 
     @BeforeMethod
     public void setUp() {
+        task_2 = new Task_2();
         matrixRows = task_2.getName();
     }
 
 
     @Test
     public void checkRowsLength() {
-        Task_2 task_2 = new Task_2();
         int expectedRowAmount = 5;
         int actualRowAmount = matrixRows.split("\n").length;
         assertEquals(expectedRowAmount, actualRowAmount);
