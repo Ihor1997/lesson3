@@ -1,4 +1,4 @@
-package lesson3;
+package main.java.lesson3;
 
 public class F_int_long {
     public static void main(String[] args) {

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="FirstSuite">
+    <test name="FirstTest">
+        <classes>
+            <class name="main.java.homework_5.Task_1">
+
+            </class>
+        </classes>
+    </test>
+</suite>

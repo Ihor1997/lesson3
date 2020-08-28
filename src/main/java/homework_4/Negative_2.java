@@ -1,34 +1,31 @@
 package main.java.homework_4;
 
-import net.bytebuddy.implementation.bytecode.StackManipulation;
-import net.bytebuddy.implementation.bytecode.Throw;
+import main.java.homework_4.homework_4_pages.AuthModal;
+import main.java.homework_4.homework_4_pages.HomePage;
+import main.java.homework_4.homework_4_pages.RegisterModal;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
+import java.util.concurrent.TimeUnit;
+
 import static org.testng.Assert.assertEquals;
 
 
-public class Negative_2 {
+public class Negative_2  {
+
 
     WebDriver driver;
-    WebDriverWait wait;
+    AuthModal authModal;
+    HomePage homePage;
+    RegisterModal registerModal;
 
-    By waitForAuth = By.cssSelector("a[class = 'header-topline__user-link link-dashed']");
-    By registerButton = By.className("auth-modal__register-link");
-    By surname = By.cssSelector(".form__row:nth-child(1) > .ng-untouched");
-    By name = By.xpath("//fieldset[2]/input");
-    By email = By.xpath("//fieldset[3]/input");
-    By password = By.xpath("//fieldset[4]/div/input");
-    By submit = By.xpath("//button[@type='submit']");
 
 
 
@@ -39,23 +36,25 @@ public class Negative_2 {
         options.addArguments("--disable-notification");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, 10, 500);
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
+        authModal = new AuthModal(driver);
+        homePage = new HomePage(driver);
+        registerModal = new RegisterModal(driver);
 
     }
 
     @Test()
     public void wayToWarnings()  {
-        driver.get("https://rozetka.com.ua/");
-        wait.until(ExpectedConditions.elementToBeClickable(waitForAuth)).click();
-        wait.until(ExpectedConditions.elementToBeClickable(registerButton)).click();
+        homePage.open()
+                .callAuthModal();
+        authModal
+                .authModalCross();
+        registerModal.ClickAllRows();
         checkNullWarnings();
     }
     public void checkNullWarnings(){
-        wait.until(ExpectedConditions.elementToBeClickable(surname)).sendKeys("Тестер");
-        driver.findElement(name).sendKeys("Игорь");
-        driver.findElement(email).click();
-        driver.findElement(password).click();
-        driver.findElement(submit).click();
+        driver.findElement(registerModal.surname).sendKeys("Тестер");
+        driver.findElement(registerModal.name).sendKeys("Игорь");
         try {
             driver.findElement(By.xpath("//p[contains(.,'Введите свою фамилию на кириллице')]"));
         } catch (Exception e){

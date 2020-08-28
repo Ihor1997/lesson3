@@ -1,4 +1,4 @@
-package lesson3;
+package main.java.lesson3;
 
 public class B_byte {
     public static void main(String[] args) {

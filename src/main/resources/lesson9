@@ -1,0 +1,11 @@
+homePage.open();
+homePage.clickContacts();
+contactPage.click();
+List<WebElements> questions = qaPage.getQuestions();
+
+homePage
+    .open()
+    .clickContacts();
+contactPage.click();
+List<WebElements> questions = qaPage.getQuestions();
+

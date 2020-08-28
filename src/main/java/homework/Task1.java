@@ -1,10 +1,12 @@
-package lesson3.homework;
+package main.java.homework;
+
+import org.testng.annotations.Test;
 
 public class Task1 {
     public static void main(String[] args) {
         System.out.println(min(5,2,3));
     }
-
+    @Test
     public static int min(int a, int b, int c) {
 
 
