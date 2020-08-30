@@ -1,4 +1,4 @@
-package main.java.homework_4.homework_4_pages;
+package main.java.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

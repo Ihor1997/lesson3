@@ -1,14 +1,13 @@
-package main.java.homework_4.homework_4_pages;
+package main.java.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
+public class HomePage extends BasePage{
 
     WebDriver driver;
-    WebDriverWait wait;
+
     By authBtn = By.cssSelector("a[class = 'header-topline__user-link link-dashed']");
     By search = By.cssSelector("input[name = 'search']");
     By searchBtn = By.xpath("//form/button");
@@ -16,12 +15,12 @@ public class HomePage {
 
 
     public  HomePage(WebDriver driver){
+        super(driver);
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10, 500);
     }
 
-    public HomePage open(){
-        driver.get("https://rozetka.com.ua/");
+    public HomePage open(String url){
+        driver.get("https://rozetka.com.ua/notebooks/c80004/");
         return this;
     }
 

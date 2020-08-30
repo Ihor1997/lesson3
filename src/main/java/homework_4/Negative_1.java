@@ -1,18 +1,15 @@
 package main.java.homework_4;
 
-import main.java.homework_4.homework_4_pages.AuthModal;
-import main.java.homework_4.homework_4_pages.HomePage;
-import main.java.homework_4.homework_4_pages.RegisterModal;
+import main.java.Pages.AuthModal;
+import main.java.Pages.HomePage;
+import main.java.Pages.RegisterModal;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
@@ -40,25 +37,25 @@ public class Negative_1 {
 
     }
 
-    @Test()
-    public void runWayToWarnings() {
-        homePage.open()
-                .callAuthModal();
-        authModal
-                .authModalCross();
-        registerModal.ClickAllRows();
-        checkAllRowsErr();
-
-    }
-
-        public void checkAllRowsErr(){
-            List<WebElement> errorElementsSize = driver.findElements(By.cssSelector("p[class = validation-message"));
-            if (errorElementsSize.size() == 3){
-                driver.findElement(passwordErr);
-            }
-
-        }
-
+//    @Test()
+//    public void runWayToWarnings() {
+//        homePage.open()
+//                .callAuthModal();
+//        authModal
+//                .authModalCross();
+//        registerModal.ClickAllRows();
+//        checkAllRowsErr();
+//
+//    }
+//
+//        public void checkAllRowsErr(){
+//            List<WebElement> errorElementsSize = driver.findElements(By.cssSelector("p[class = validation-message"));
+//            if (errorElementsSize.size() == 3){
+//                driver.findElement(passwordErr);
+//            }
+//
+//        }
+//
 
 
     @AfterMethod
