@@ -1,54 +1,57 @@
 package main.java.homework_5;
 
-//public class Task_1 {
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeMethod;
 
-//    WebDriver driver;
-//    HomePage homePage;
-//    SearchResultPage searchResultPage;
-//    By elValue = By.cssSelector("span[class = 'goods-tile__title']");
-//
-//    @BeforeMethod
-//    public void setUp() {
-//        System.setProperty("webdriver.chrome.driver,", "chromedriver");
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--disable-notification");
-//        driver = new ChromeDriver(options);
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
-//        homePage = new HomePage(driver);
-//        searchResultPage = new SearchResultPage(driver);
-//
-//    }
-//
-//    @Test()
-//    public void searchIphonePage() {
-//        homePage.open()
-//                .searchIphone();
-//        searchResultPage
-//                .searchDevicePageEndDownload();
-//
-//        List<WebElement> getElText = driver.findElements(elValue);
-//
-//        for (WebElement webElement: getElText) {
-//            String name = webElement.getText();
-//
-//            if (name.contains("Apple iPhone")){
-//                continue;
-//            } else {
-//                System.out.println("Error");
-//            }
-//
-//
-//        }
-//
-//
-//
-//
-//    }
+public class Task_1 {
 
-//    @AfterMethod
-//    public void exit(){
-//        driver.quit();
-//    }
-//
-//}
+    WebDriver driver;
+    HomePage homePage;
+    SearchResultPage searchResultPage;
+    By elValue = By.cssSelector("span[class = 'goods-tile__title']");
+
+    @BeforeMethod
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver,", "chromedriver");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notification");
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
+        homePage = new HomePage(driver);
+        searchResultPage = new SearchResultPage(driver);
+
+    }
+
+    @Test()
+    public void searchIphonePage() {
+        homePage.open()
+                .searchIphone();
+        searchResultPage
+                .searchDevicePageEndDownload();
+
+        List<WebElement> getElText = driver.findElements(elValue);
+
+        for (WebElement webElement: getElText) {
+            String name = webElement.getText();
+
+            if (name.contains("Apple iPhone")){
+                continue;
+            } else {
+                System.out.println("Error");
+            }
+
+
+        }
+
+
+
+
+    }
+
+    @AfterMethod
+    public void exit(){
+        driver.quit();
+    }
+
+}
