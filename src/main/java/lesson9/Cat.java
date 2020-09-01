@@ -14,4 +14,11 @@ package main.java.lesson9;
             String temp = super.toString();
             return temp + " Cat";
         }
-}
+
+        @Override
+        public String getName() {
+            return "Cat";
+        }
+
+
+    }
