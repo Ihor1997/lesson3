@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Date;
 
 public class Screenshot {
     private WebDriver driver;
@@ -28,7 +29,8 @@ public class Screenshot {
                     currentRelativePath.toAbsolutePath().toString()
                             + "\\screenshots"
                             + "\\" + result.getTestClass().getName().replace(".","\\")
-                            + "\\" + result.getMethod().getConstructorOrMethod().getName() + ".png"
+                            + "\\" + result.getMethod().getConstructorOrMethod().getName()
+                            + new Date().getTime() + ".png"
             ));
         } catch (IOException e) {
             e.printStackTrace();
