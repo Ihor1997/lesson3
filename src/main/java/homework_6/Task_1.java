@@ -32,31 +32,25 @@ public class Task_1 extends Properties{
         tempProducer = producer;
         homePage.open("https://rozetka.com.ua/notebooks/c80004/");
         searchResultPage.searchDevicePageEndDownload();
-        String arr[] = {""};
-        for (String prod: arr) {
-        homePage.clickFilter(p  rod);
+        String arr[] = {producer};
+        for (String prod : arr) {
+            homePage.clickFilter(prod);
+            searchResultPage.searchDevicePageEndDownload();
         }
-        homePage.clickFilter(producer);
-        searchResultPage.searchDevicePageEndDownload();
+            List<WebElement> getElText = driver.findElements(elValue);
 
-        List<WebElement> getElText = driver.findElements(elValue);
-
-        for (WebElement webElement: getElText) {
-            String name = webElement.getText();
-            assertTrue(name.contains(producer));
+            for (WebElement webElement : getElText) {
+                String name = webElement.getText();
+                assertTrue(name.contains(producer));
 
 
+            }
         }
-    }
 
 
-    @AfterMethod
-    public void iterationProvider(){
-        homePage.clickFilter(tempProducer);
-    }
 
     @DataProvider(name = "dp")
-    public Object[][] provider(String producer) {
+    public Object[][] provider() {
         return new Object[][] {
                 {"Acer" }, {"Apple" }, {"Asus" }, {"Dell" }, {"Dream Machines" }, {"HP" }, {"Huawei" }, {"Lenovo" }, {"MSI" }, {"Microsoft" }, {"Razer" }, {"Xiaomi" }, {"Alien" }, {"Chuwi" }, {"Compaq" }, {"Digma" }, {"Durabook" }, {"Epic" }, {"Fujitsu" }, {"Fujitsu-siemens" }, {"Gigabyte" }, {"Google" }, {"Jumper" }, {"Mediacom" }, {"Medion" }, {"Mixzo" }, {"NuVision" }, {"Odys" }, {"Panasonic" }, {"Porsche Design" }, {"Prestigio" }, {"RCA" }, {"Teclast" }, {"Toshiba" }, {"Vinga" }, {"Yepo" }
 
