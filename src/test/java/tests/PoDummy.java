@@ -22,12 +22,12 @@ public class PoDummy extends  TestBaseSetUp {
         qaPage = new QaPage(driver);
     }
 
-    @Test
+    @Test()
     public void test1() {
         homePage
                 .open();
         homePage.clickContacts();
-//        contactPage.clickQa();
+        contactPage.clickQa();
 //        List<WebElement> questions = qaPage.getQuestion();
 //        for (WebElement question : questions) {
 //            String actualFontColor = question.getCssValue("color");

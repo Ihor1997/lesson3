@@ -4,11 +4,14 @@ import main.java.Pages.HomePage;
 import main.java.Pages.SearchResultPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Task_2 {
@@ -32,31 +35,31 @@ public class Task_2 {
     }
 
 
-//    @Test()
-//    public void searchSamsungPage(){
-//        homePage.open()
-//                .searchSamsung();
-//        searchResultPage.searchDevicePageEndDownload();
-//
-//        List<WebElement> getElText = driver.findElements(elValue);
-//
-//        for (WebElement webElement: getElText) {
-//            String name = webElement.getText();
-//            String resultName = name.toUpperCase();
-//
-//            if (resultName.contains("SAMSUNG")){
-//                continue;
-//            } else {
-//                System.out.println("Error");
-//            }
-//
-//
-//        }
-//
-//
-//
-//
-//    }
+    @Test()
+    public void searchSamsungPage(){
+        homePage.open("")
+                .searchDevice("Samsung");
+        searchResultPage.searchDevicePageEndDownload();
+
+        List<WebElement> getElText = driver.findElements(elValue);
+
+        for (WebElement webElement: getElText) {
+            String name = webElement.getText();
+            String resultName = name.toUpperCase();
+
+            if (resultName.contains("SAMSUNG")){
+                continue;
+            } else {
+                System.out.println("Error");
+            }
+
+
+        }
+
+
+
+
+    }
 
 
     @AfterMethod

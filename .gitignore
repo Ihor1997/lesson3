@@ -2,3 +2,5 @@
 *.iml
 target/
 chromedriver
+screenshots/
+aqa_java_tasks/

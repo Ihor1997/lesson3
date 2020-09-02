@@ -11,6 +11,7 @@ public class HomePage extends BasePage{
     By authBtn = By.cssSelector("a[class = 'header-topline__user-link link-dashed']");
     By search = By.cssSelector("input[name = 'search']");
     By searchBtn = By.xpath("//form/button");
+    By checkbox = By.xpath("//label[contains(.,'Acer')]");
 
 
 
@@ -29,18 +30,23 @@ public class HomePage extends BasePage{
         return this;
     }
 
-    public HomePage searchIphone(){
-        wait.until(ExpectedConditions.elementToBeClickable(search)).sendKeys("Iphone");
-
+    public HomePage searchDevice(String searchValue){
+        wait.until(ExpectedConditions.elementToBeClickable(search)).sendKeys(searchValue);
         driver.findElement(searchBtn).click();
         return this;
     }
 
-    public HomePage searchSamsung(){
-        wait.until(ExpectedConditions.elementToBeClickable(search)).sendKeys("Samsung");
-        driver.findElement(searchBtn).click();
-        return this;
+    public HomePage checkboxVale(String ){
 
+    }
+
+
+
+
+
+    public HomePage clickFilter(){
+    driver.findElement().click();
+        return this;
     }
 
 

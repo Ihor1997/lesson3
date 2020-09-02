@@ -22,7 +22,8 @@ public class ContactPage extends BasePage {
     }
 
     public ContactPage clickQa() {
-        //logger.info("Click QA");
+        System.out.println(1/0);
+        logger.info("Click QA");
         wait.until(ExpectedConditions.presenceOfElementLocated(qaBtnBy));
         WebElement qaBtn = driver.findElement(qaBtnBy);
         wait.until(ExpectedConditions.elementToBeClickable(qaBtnBy));

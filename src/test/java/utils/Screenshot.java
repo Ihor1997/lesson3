@@ -13,7 +13,8 @@ import java.nio.file.Paths;
 import java.util.Date;
 
 public class Screenshot {
-    private WebDriver driver;
+    private final WebDriver driver;
+    private final String delimiter = System.getProperty("os.name").toLowerCase().contains("windows") ? "\\" : "/";
 
 
     public Screenshot(WebDriver driver){
@@ -27,9 +28,9 @@ public class Screenshot {
         try {
             FileUtils.copyFile(scr, new File(
                     currentRelativePath.toAbsolutePath().toString()
-                            + "\\screenshots"
-                            + "\\" + result.getTestClass().getName().replace(".","\\")
-                            + "\\" + result.getMethod().getConstructorOrMethod().getName()
+                            + delimiter + "/screenshots"
+                            + delimiter + result.getTestClass().getName().replace(".","/")
+                            + delimiter + result.getMethod().getConstructorOrMethod().getName()
                             + new Date().getTime() + ".png"
             ));
         } catch (IOException e) {

@@ -19,13 +19,13 @@ public class QaPage extends BasePage {
 
     @Override
     public QaPage open() {
-      //  logger.info("QA page was opened");
+        logger.info("QA page was opened");
         driver.get("https://rozetka.com.ua/faq/");
         return this;
     }
 
     public List<WebElement> getQuestion() {
-      //  logger.info("Get question");
+       logger.info("Get question");
         List<WebElement> questions = driver.findElements(questionsBy);
         wait.until(ExpectedConditions.elementToBeClickable(questions.get(0)));
         return questions;

@@ -4,4 +4,7 @@ public interface IAnimable {
 
     void sleep();
     void eat();
+    default void run(){
+
+    };
 }
