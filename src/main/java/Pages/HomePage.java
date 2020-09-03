@@ -21,7 +21,9 @@ public class HomePage extends BasePage{
     }
 
     public HomePage open(String url){
+        this.logger.trace("Test");
         this.logger.info("Home page was opened");
+        this.logger.debug("----");
         driver.get("https://rozetka.com.ua/notebooks/c80004/");
         return this;
     }
@@ -41,7 +43,7 @@ public class HomePage extends BasePage{
 
     public HomePage clickFilter(String providerValue){
         this.logger.info("Find Checkbox with Provider value");
-    driver.findElement(By.xpath("//label[contains(.,'"+providerValue+"')]")).click();
+        driver.findElement(By.xpath("//label[contains(.,'"+providerValue+"')]")).click();
         return this;
     }
 
