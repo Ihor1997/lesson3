@@ -4,7 +4,6 @@ import main.java.Pages.HomePage;
 import main.java.Pages.SearchResultPage;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public class Task_1 extends Properties{
         searchResultPage = new SearchResultPage(driver);
     }
 
-    @Test(dataProvider = "dp")
+    @Test(dataProvider = "dp", dataProviderClass = DataProviderClass.class)
     public void runToDevice(String producer) {
         tempProducer = producer;
         homePage.open(laptopPage);
@@ -43,13 +42,13 @@ public class Task_1 extends Properties{
 
 
 
-    @DataProvider(name = "dp")
-    public Object[][] provider() {
-        return new Object[][] {
-                {"Acer" }, {"Apple" }, {"Asus" }, {"Dell" }, {"Dream Machines" }, {"HP" }, {"Huawei" }, {"Lenovo" }, {"MSI" }, {"Microsoft" }, {"Razer" }, {"Xiaomi" }, {"Alien" }, {"Chuwi" }, {"Compaq" }, {"Digma" }, {"Durabook" }, {"Epic" }, {"Fujitsu" }, {"Fujitsu-siemens" }, {"Gigabyte" }, {"Google" }, {"Jumper" }, {"Mediacom" }, {"Medion" }, {"Mixzo" }, {"NuVision" }, {"Odys" }, {"Panasonic" }, {"Porsche Design" }, {"Prestigio" }, {"RCA" }, {"Teclast" }, {"Toshiba" }, {"Vinga" }, {"Yepo" }
-
-        };
-    }
+//    @DataProvider(name = "dp")
+//    public Object[][] provider() {
+//        return new Object[][] {
+//                {"Acer" }, {"Apple" }, {"Asus" }, {"Dell" }, {"Dream Machines" }, {"HP" }, {"Huawei" }, {"Lenovo" }, {"MSI" }, {"Microsoft" }, {"Razer" }, {"Xiaomi" }, {"Alien" }, {"Chuwi" }, {"Compaq" }, {"Digma" }, {"Durabook" }, {"Epic" }, {"Fujitsu" }, {"Fujitsu-siemens" }, {"Gigabyte" }, {"Google" }, {"Jumper" }, {"Mediacom" }, {"Medion" }, {"Mixzo" }, {"NuVision" }, {"Odys" }, {"Panasonic" }, {"Porsche Design" }, {"Prestigio" }, {"RCA" }, {"Teclast" }, {"Toshiba" }, {"Vinga" }, {"Yepo" }
+//
+//        };
+//    }
 
 
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import test.java.utils.PropertyLoader;
 
 public class ContactPage extends BasePage {
     WebDriver driver;
@@ -17,7 +18,7 @@ public class ContactPage extends BasePage {
     @Override
     public ContactPage open() {
         System.out.println("Contact page was opened");
-        driver.get("https://rozetka.com.ua/contacts/");
+        driver.get(PropertyLoader.loadProperty("baseurl") + "contacts/");
         return this;
     }
 

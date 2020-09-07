@@ -1,5 +1,6 @@
 package main.java.Pages;
 
+import main.java.utils.PropertyLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,7 +25,7 @@ public class HomePage extends BasePage{
         this.logger.trace("Test");
         this.logger.info("Home page was opened");
         this.logger.debug("----");
-        driver.get("https://rozetka.com.ua/notebooks/c80004/");
+        driver.get(PropertyLoader.loadProperty("baseurl"));
         return this;
     }
 

@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="DpStart">
+    <listeners>
+        <listener class-name="main.java.utils.listener"/>
+        <listener class-name="main.java.utils.AnnotationTransformer"/>
+    </listeners>
+    <test name="FirstDpTest">
+        <classes>
+            <class name="main.java.homework_6.Task_1"/>
+        </classes>
+    </test>
+</suite>

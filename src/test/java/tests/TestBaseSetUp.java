@@ -1,8 +1,8 @@
 package test.java.tests;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -18,7 +18,13 @@ public class TestBaseSetUp {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
-        driver = new ChromeDriver(options);
+        FirefoxOptions ffoptions = new FirefoxOptions();
+       // driver = new ChromeDriver(options);
+//        try {
+//            driver =new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.MILLISECONDS);
         testContext.setAttribute("driver", driver);
