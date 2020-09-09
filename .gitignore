@@ -5,3 +5,4 @@ chromedriver
 screenshots/
 aqa_java_tasks/
 src/test/resources/secure-config.properties
+allure-results/
