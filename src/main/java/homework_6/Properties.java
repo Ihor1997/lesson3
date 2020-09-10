@@ -25,21 +25,21 @@ public class Properties {
 
 
 
-    @Parameters({"Port"})
+    @Parameters({"browser"})
     @BeforeMethod
-    public void setUp(ITestContext testContext, String Port) {
+    public void setUp(ITestContext testContext, String browser) {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         FirefoxOptions ffoptions = new FirefoxOptions();
         // driver = new ChromeDriver(options);
         try {
-            if(Port.equalsIgnoreCase("9001"))
+            if(browser.equalsIgnoreCase("chrome"))
             {
                 driver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.chrome());
                 driver.manage().window().maximize();
             }
-            else if(Port.equalsIgnoreCase("9002")){
+            else if(browser.equalsIgnoreCase("firefox")){
                 driver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), DesiredCapabilities.firefox());
                 driver.manage().window().maximize();
             }

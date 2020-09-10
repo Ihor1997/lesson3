@@ -7,7 +7,6 @@
 
     <test name="FirstTest_Chrome">
         <parameter name="browser" value="chrome" />
-        <parameter name="Port" value="9001" />
         <classes>
             <class name="main.java.homework_6.Task_1"/>
         </classes>
@@ -16,7 +15,6 @@
 
     <test name="SecondTest_Firefox">
         <parameter name="browser" value="firefox" />
-        <parameter name="Port" value="9002" />
         <classes>
             <class name="main.java.homework_6.Paralel_Test"/>
         </classes>
