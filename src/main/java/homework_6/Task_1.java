@@ -1,5 +1,9 @@
 package main.java.homework_6;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import main.java.Pages.HomePage;
 import main.java.Pages.SearchResultPage;
 import org.openqa.selenium.WebElement;
@@ -10,6 +14,8 @@ import java.util.List;
 
 import static org.testng.Assert.assertTrue;
 
+@Epic("Filters Iphone")
+@Feature("First feature")
 public class Task_1 extends Properties{
 
     HomePage homePage;
@@ -22,10 +28,12 @@ public class Task_1 extends Properties{
         searchResultPage = new SearchResultPage(driver);
     }
 
+    @Description("Filter Iteration")
+    @Story("Story-1")
     @Test(dataProvider = "dp", dataProviderClass = DataProviderClass.class)
     public void runToDevice(String producer) {
         tempProducer = producer;
-        homePage.open(laptopPage);
+        homePage.open();
         searchResultPage.searchDevicePageEndDownload();
         String arr[] = {producer};
         for (String prod : arr) {

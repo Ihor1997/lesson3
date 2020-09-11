@@ -26,7 +26,7 @@ public class Paralel_Test extends Properties {
     @Test(dataProvider = "dp", dataProviderClass = DataProviderClass.class)
     public void runToDevice(String producer) {
         tempProducer = producer;
-        homePage.open(laptopPage);
+        homePage.open();
         searchResultPage.searchDevicePageEndDownload();
         String arr[] = {producer};
         for (String prod : arr) {

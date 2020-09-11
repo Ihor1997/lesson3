@@ -1,8 +1,6 @@
 package main.java.utils;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.*;
-import test.java.utils.Screenshot;
 
 public class listener implements ISuiteListener, ITestListener, IInvokedMethodListener {
 
@@ -39,10 +37,10 @@ public class listener implements ISuiteListener, ITestListener, IInvokedMethodLi
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ITestContext testContext = result.getTestContext();
-        WebDriver driver = (WebDriver) testContext.getAttribute("driver");
-        Screenshot screenshot = new Screenshot(driver);
-        screenshot.makeScreenshot(result);
+//        ITestContext testContext = result.getTestContext();
+//        WebDriver driver = (WebDriver) testContext.getAttribute("driver");
+//        Screenshot screenshot = new Screenshot(driver);
+//        screenshot.makeScreenshot(result);
         System.out.println("Test finished with failure");
     }
     @Override

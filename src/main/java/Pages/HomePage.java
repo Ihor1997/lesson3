@@ -1,5 +1,6 @@
 package main.java.Pages;
 
+import io.qameta.allure.Step;
 import main.java.utils.PropertyLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,11 +22,12 @@ public class HomePage extends BasePage{
         this.driver = driver;
     }
 
-    public HomePage open(String url){
+    @Step("Home page open")
+    public HomePage open(){
         this.logger.trace("Test");
         this.logger.info("Home page was opened");
         this.logger.debug("----");
-        driver.get(PropertyLoader.loadProperty("baseurl"));
+        driver.get(PropertyLoader.loadProperty("HomeWork_7_url"));
         return this;
     }
 
