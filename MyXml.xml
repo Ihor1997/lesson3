@@ -6,7 +6,7 @@
     </listeners>
     <test name="MyTest">
         <classes>
-            <class name="main.java.homework_6.Task_1"/>
+            <class name="main.java.homework_7.Task_1"/>
         </classes>
     </test>
 </suite>

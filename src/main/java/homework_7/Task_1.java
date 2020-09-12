@@ -37,13 +37,15 @@ public class Task_1 extends Properties {
             homePage.open();
             searchResultPage.searchDevicePageEndDownload();
             homePage.clickFilter(manufacture[randomValue]);
+            searchResultPage.searchDevicePageEndDownload();
 
             List<WebElement> getElText = driver.findElements(elValue);
 
             for (WebElement webElement : getElText) {
                 String name = webElement.getText();
+                //String resultCheckboxValue = Integer.toString(randomValue);
 
-             //   assertEquals();
+               // assertTrue(name.contains(resultCheckboxValue));
             }
 
 
