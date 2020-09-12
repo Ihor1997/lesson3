@@ -50,9 +50,5 @@ public class Task_1 extends Properties {
                 assertTrue(name.contains(resultCheckboxValue));
             }
 
-
-
-
-
         }
 }
