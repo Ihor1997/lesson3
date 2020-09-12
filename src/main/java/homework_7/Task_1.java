@@ -12,6 +12,8 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+import static org.testng.Assert.assertTrue;
+
 @Epic("Random Manufacture")
 @Feature("Checkbox Work")
 
@@ -43,9 +45,9 @@ public class Task_1 extends Properties {
 
             for (WebElement webElement : getElText) {
                 String name = webElement.getText();
-                //String resultCheckboxValue = Integer.toString(randomValue);
+                String resultCheckboxValue = Integer.toString(randomValue);
 
-               // assertTrue(name.contains(resultCheckboxValue));
+                assertTrue(name.contains(resultCheckboxValue));
             }
 
 

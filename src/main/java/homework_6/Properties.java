@@ -31,7 +31,11 @@ public class Properties {
         options.addArguments("--disable-notifications");
         //FirefoxOptions ffoptions = new FirefoxOptions();
         //driver = new ChromeDriver(options);
-//        try {
+
+        try {
+
+            driver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), options);
+
 //            if(browser.equalsIgnoreCase("chrome"))
 //            {
 //                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.chrome());
@@ -41,22 +45,6 @@ public class Properties {
 //                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.firefox());
 //                driver.manage().window().maximize();
 //            }
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-        try {
-
-            driver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), options);
-
-            if(browser.equalsIgnoreCase("chrome"))
-            {
-                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.chrome());
-                driver.manage().window().maximize();
-            }
-            else if(browser.equalsIgnoreCase("firefox")){
-                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.firefox());
-                driver.manage().window().maximize();
-            }
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
