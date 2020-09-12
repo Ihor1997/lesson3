@@ -37,11 +37,11 @@ public class Properties {
         try {
             if(browser.equalsIgnoreCase("chrome"))
             {
-                driver = new RemoteWebDriver(new URL("http:demo.gns-it.com:44444/wd/hub"), DesiredCapabilities.chrome());
+                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.chrome());
                 driver.manage().window().maximize();
             }
             else if(browser.equalsIgnoreCase("firefox")){
-                driver = new RemoteWebDriver(new URL("http:demo.gns-it.com:44444/wd/hub"), DesiredCapabilities.firefox());
+                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.firefox());
                 driver.manage().window().maximize();
             }
         } catch (MalformedURLException e) {
