@@ -45,7 +45,19 @@ public class Properties {
 //            e.printStackTrace();
 //        }
         try {
+
             driver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), options);
+
+            if(browser.equalsIgnoreCase("chrome"))
+            {
+                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.chrome());
+                driver.manage().window().maximize();
+            }
+            else if(browser.equalsIgnoreCase("firefox")){
+                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.firefox());
+                driver.manage().window().maximize();
+            }
+
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
