@@ -17,7 +17,7 @@ public class SearchResultPage extends  BasePage{
     }
 
     @Override
-    public BasePage open() {
+    public BasePage open(String url) {
         return null;
     }
 

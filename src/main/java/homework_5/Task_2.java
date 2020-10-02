@@ -37,7 +37,7 @@ public class Task_2 {
 
     @Test()
     public void searchSamsungPage(){
-        homePage.open()
+        homePage.open("")
                 .searchDevice("Samsung");
         searchResultPage.searchDevicePageEndDownload();
 

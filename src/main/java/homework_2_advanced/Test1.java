@@ -18,10 +18,14 @@ public class Test1 {
     public void testAge(){
          int testAge = 15;
          task1.setAge(testAge);
-         int actualAge = task1.getAge();
-        assertEquals(testAge, actualAge);
 
 
+    }
+
+    @Test
+    public void testName(){
+        String testNameCheck = "Hi";
+        task1.setName(testNameCheck);
 
 
     }

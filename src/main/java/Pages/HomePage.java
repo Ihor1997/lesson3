@@ -13,6 +13,7 @@ public class HomePage extends BasePage{
     By authBtn = By.cssSelector("a[class = 'header-topline__user-link link-dashed']");
     By search = By.cssSelector("input[name = 'search']");
     By searchBtn = By.xpath("//form/button");
+    By cardElements = By.cssSelector("ul[class = 'menu-categories menu-categories_type_main']");
 
 
 
@@ -23,11 +24,17 @@ public class HomePage extends BasePage{
     }
 
     @Step("Home page open")
-    public HomePage open(){
+    public HomePage open(String url){
         this.logger.trace("Test");
         this.logger.info("Home page was opened");
         this.logger.debug("----");
-        driver.get(PropertyLoader.loadProperty("HomeWork_7_url"));
+        driver.get(PropertyLoader.loadProperty(url));
+        return this;
+    }
+
+    public HomePage endPageRendering(){
+        this.logger.info("Home page Rendering");
+        wait.until(ExpectedConditions.elementToBeClickable(cardElements));
         return this;
     }
 

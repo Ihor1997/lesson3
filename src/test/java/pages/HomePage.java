@@ -35,7 +35,7 @@ public class HomePage extends BasePage {
                 "age: 20\n" +
                 "}\n" +
                 "]\n");
-        driver.get(PropertyLoader.loadProperty("baseurl"));
+        driver.get(PropertyLoader.loadProperty(""));
         return this;
     }
     public HomePage clickContacts() {

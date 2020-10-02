@@ -2,9 +2,9 @@ package main.java.homework_2_advanced;
 
 public class Task1 {
 
-         int age;
-         String name;
-        String ageGroup;
+         private int age;
+         private String name;
+         String ageGroup;
 
 
 
@@ -33,7 +33,7 @@ public class Task1 {
             }
         }
 
-        public void setName(){
+        public void setName(String name){
             this.validateName(name);
         }
 
@@ -43,18 +43,18 @@ public class Task1 {
 
 
         public void validateAgeGroup(String ageGroup){
-            if (age < 15) {
+            if (age <= 15) {
                 System.out.println(this.ageGroup = age + " Child");
-            } if (age > 15 && age < 25){
+            } if (age > 15 && age <= 25){
                 System.out.println(this.ageGroup = age + " student");
-            } if (age > 26 && age < 65) {
+            } if (age > 26 && age <= 65) {
                 System.out.println(this.ageGroup = age + " worker");
             } if (age > 66) {
                 System.out.println(this.ageGroup = age + " pensioner");
             }
         }
 
-    public void setAgeGroup() {
+    private void setAgeGroup() {
         this.validateAgeGroup(ageGroup);
     }
 

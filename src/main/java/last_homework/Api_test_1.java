@@ -5,7 +5,7 @@ import test.java.utils.PropertyLoader;
 
 import java.io.File;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
 public class Api_test_1 {
 

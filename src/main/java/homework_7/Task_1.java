@@ -36,7 +36,7 @@ public class Task_1 extends Properties {
         @Description("Random checkbox iteration")
         @Test
         public void randomManufacturer(){
-            homePage.open();
+            homePage.open("");
             searchResultPage.searchDevicePageEndDownload();
             homePage.clickFilter(manufacture[randomValue]);
             searchResultPage.searchDevicePageEndDownload();

@@ -33,7 +33,7 @@ public class Task_1 extends Properties{
     @Test(dataProvider = "dp", dataProviderClass = DataProviderClass.class)
     public void runToDevice(String producer) {
         tempProducer = producer;
-        homePage.open();
+        homePage.open("baseurl");
         searchResultPage.searchDevicePageEndDownload();
         String arr[] = {producer};
         for (String prod : arr) {

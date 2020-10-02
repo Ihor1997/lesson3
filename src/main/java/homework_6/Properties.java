@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
@@ -30,22 +31,22 @@ public class Properties {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         //FirefoxOptions ffoptions = new FirefoxOptions();
-        //driver = new ChromeDriver(options);
+       // driver = new ChromeDriver(options);
 
         try {
 
             driver = new RemoteWebDriver(new URL("http:localhost:4444/wd/hub"), options);
 
-//            if(browser.equalsIgnoreCase("chrome"))
-//            {
-//                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.chrome());
-//                driver.manage().window().maximize();
-//            }
-//            else if(browser.equalsIgnoreCase("firefox")){
-//                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.firefox());
-//                driver.manage().window().maximize();
-//            }
-
+////            if(browser.equalsIgnoreCase("chrome"))
+////            {
+////                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.chrome());
+////                driver.manage().window().maximize();
+////            }
+////            else if(browser.equalsIgnoreCase("firefox")){
+////                driver = new RemoteWebDriver(new URL(""), DesiredCapabilities.firefox());
+////                driver.manage().window().maximize();
+////            }
+//
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

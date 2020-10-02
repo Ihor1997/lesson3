@@ -19,6 +19,6 @@ public class ее {
 
 
 
-        return a[n];
+        return first;
     }
 }

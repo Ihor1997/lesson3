@@ -4,14 +4,12 @@ public class ss {
 
 
     public static void main(String[] args) {
+         long a = 9999999999L;
 
-        String name = "abbabba";
-        StringBuffer stringBuffer = new StringBuffer(name).reverse();
-        String strRev = stringBuffer.toString();        System.out.println(strRev);
-        if (name.equalsIgnoreCase(strRev)){
-            System.out.println("Cool");
-        } else {
-            System.out.println("No");
+        for (int i = 0; i < a; i = i + 40000) {
+            continue;
+
+
         }
     }
 }
