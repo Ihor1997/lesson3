@@ -85,12 +85,10 @@ public class TestCat {
 @DataProvider(name = "dp")
     public Object[][] provider() {
         return new Object[][] {
-                {-1, 20},
-                {0, 20},
-                {1, 1},
-                {10, 20},
-                {21, 21},
-                {22, 20}
+                {0, 0},
+                {0, 0},
+                {0, 0},
+
 
     };
 

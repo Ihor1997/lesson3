@@ -2,7 +2,7 @@ package main.java.lesson4;
 
 
 public class Cat {
-   private int age = 20;
+   private int age = 0;
     String name = "---";
     static int totalamount = 0;
 
